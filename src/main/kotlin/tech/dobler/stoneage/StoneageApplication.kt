@@ -7,5 +7,5 @@ import org.springframework.boot.runApplication
 class StoneageApplication
 
 fun main(args: Array<String>) {
-	runApplication<StoneageApplication>(*args)
+    runApplication<StoneageApplication>(*args)
 }
