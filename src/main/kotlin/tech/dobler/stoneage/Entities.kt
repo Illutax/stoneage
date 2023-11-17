@@ -1,7 +1,6 @@
 package tech.dobler.stoneage
 
 import java.io.Serializable
-import java.time.Duration
 import java.time.LocalDateTime
 import java.util.*
 import javax.persistence.*
@@ -11,11 +10,6 @@ import javax.persistence.*
 data class Work(@Id val id: WorkID, val finishing: LocalDateTime, var completed: Boolean = false) {
     fun complete(): Work {
         return Work(id, finishing, true)
-    }
-
-    fun duration(): Duration {
-        val duration = Duration.between(LocalDateTime.now(), finishing)
-        return if (duration.toSeconds() < 0L) Duration.ZERO else duration
     }
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
@@ -29,8 +23,6 @@ data class Work(@Id val id: WorkID, val finishing: LocalDateTime, var completed:
     override fun hashCode(): Int {
         return id.hashCode()
     }
-
-
 }
 
 @Embeddable

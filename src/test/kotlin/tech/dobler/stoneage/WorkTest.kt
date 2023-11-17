@@ -1,30 +1,36 @@
 package tech.dobler.stoneage
 
 import org.assertj.core.api.Assertions.assertThat
+import org.assertj.core.api.recursive.comparison.RecursiveComparisonConfiguration
 import org.junit.jupiter.api.Test
 import java.time.LocalDateTime
 
 class WorkTest {
     @Test
-    fun `zero duration`() {
-        val now = LocalDateTime.now()
-        val work = Work(WorkID.new(), now)
-        assertThat(work.duration().toSeconds()).isZero()
+    fun `ctor finished default=false`() {
+        val work = Work(WorkID("abc"), LocalDateTime.parse("2023-11-17T13:18"))
+        assertThat(work.id.value).isEqualTo("abc")
+        assertThat(work.finishing.toString()).isEqualTo("2023-11-17T13:18")
+        assertThat(work.completed).isEqualTo(false)
     }
 
     @Test
-    fun `positive duration`() {
-        val now = LocalDateTime.now()
-        val inThePast = now.plusMinutes(2)
-        val work = Work(WorkID.new(), inThePast)
-        assertThat(work.duration()).isPositive()
+    fun `ctor completed`() {
+        val uncompleted = Work(WorkID("abc"), LocalDateTime.parse("2023-11-17T13:18"))
+        val work = uncompleted.complete()
+        assertThat(work.id.value).isEqualTo("abc")
+        assertThat(work.finishing.toString()).isEqualTo("2023-11-17T13:18")
+        assertThat(work.completed).isEqualTo(true)
+        assertThat(work)
+            .usingRecursiveComparison(RecursiveComparisonConfiguration.builder().withIgnoredFields("completed").build())
+            .isEqualTo(uncompleted)
     }
 
     @Test
-    fun `negative duration overrides to zero`() {
-        val now = LocalDateTime.now()
-        val inTheFuture = now.minusMinutes(2)
-        val work = Work(WorkID.new(), inTheFuture)
-        assertThat(work.duration().toSeconds()).isZero()
+    fun `ctor not finished`() {
+        val work = Work(WorkID("abc"), LocalDateTime.parse("2023-11-17T13:18"), false)
+        assertThat(work.id.value).isEqualTo("abc")
+        assertThat(work.finishing).hasToString("2023-11-17T13:18")
+        assertThat(work.completed).isEqualTo(false)
     }
 }
