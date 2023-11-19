@@ -17,6 +17,7 @@
 
     <modules>
         <module>stoneage-backend</module>
+        <module>stoneage-frontend</module>
     </modules>
 
 </project>
