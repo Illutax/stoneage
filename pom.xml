@@ -16,8 +16,8 @@
     <!-- reactor project used to ease import into ide not to build artifacts -->
 
     <modules>
-        <module>stoneage-backend</module>
-        <module>stoneage-frontend</module>
+        <module>backend</module>
+        <module>frontend</module>
     </modules>
 
 </project>
