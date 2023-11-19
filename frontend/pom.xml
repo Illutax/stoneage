@@ -9,8 +9,8 @@
     <version>0.0.1-SNAPSHOT</version>
 
     <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.source>7</maven.compiler.source>
+        <maven.compiler.target>7</maven.compiler.target>
         <node.version>v16.20.1</node.version>
         <npm.version>8.19.4</npm.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
