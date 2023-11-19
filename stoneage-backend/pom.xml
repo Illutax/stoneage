@@ -21,7 +21,7 @@
         <java.version>17</java.version>
 
         <liquibase.propertyFile>${project.basedir}/src/main/resources/liquibase.properties</liquibase.propertyFile>
-        <main.class>tech.dobler.stoneage.StoneageApplicationKt</main.class>
+        <main.class>tech.dobler.stoneage.StoneageApplication</main.class>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
