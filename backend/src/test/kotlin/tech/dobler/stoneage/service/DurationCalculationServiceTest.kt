@@ -1,10 +1,11 @@
-package tech.dobler.stoneage
+package tech.dobler.stoneage.service
 
 import org.assertj.core.api.Assertions
-import org.junit.jupiter.api.Test
-
 import org.junit.jupiter.api.BeforeEach
+import org.junit.jupiter.api.Test
 import org.mockito.Mockito.mock
+import tech.dobler.stoneage.domain.Work
+import tech.dobler.stoneage.domain.WorkID
 import java.time.LocalDateTime
 import org.mockito.Mockito.`when` as mockitoWhen
 

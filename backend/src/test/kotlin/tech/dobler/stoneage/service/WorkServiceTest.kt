@@ -1,4 +1,4 @@
-package tech.dobler.stoneage
+package tech.dobler.stoneage.service
 
 import org.assertj.core.api.AssertionsForInterfaceTypes.assertThat
 import org.junit.jupiter.api.BeforeEach
@@ -7,6 +7,9 @@ import org.junit.jupiter.api.extension.ExtendWith
 import org.mockito.Mock
 import org.mockito.Mockito.`when`
 import org.mockito.junit.jupiter.MockitoExtension
+import tech.dobler.stoneage.domain.Work
+import tech.dobler.stoneage.domain.WorkID
+import tech.dobler.stoneage.repository.WorkRepository
 import java.time.LocalDateTime
 
 @ExtendWith(MockitoExtension::class)

@@ -1,6 +1,10 @@
-package tech.dobler.stoneage
+package tech.dobler.stoneage.service
 
 import org.springframework.stereotype.Service
+import tech.dobler.stoneage.Log
+import tech.dobler.stoneage.domain.Work
+import tech.dobler.stoneage.domain.WorkID
+import tech.dobler.stoneage.repository.WorkRepository
 import java.time.LocalDateTime
 import java.util.concurrent.TimeUnit
 

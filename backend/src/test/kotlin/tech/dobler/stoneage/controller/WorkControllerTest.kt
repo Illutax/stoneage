@@ -1,4 +1,4 @@
-package tech.dobler.stoneage
+package tech.dobler.stoneage.controller
 
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Nested
@@ -10,6 +10,10 @@ import org.springframework.test.web.servlet.result.MockMvcResultHandlers.print
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers.content
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers.status
 import org.springframework.test.web.servlet.setup.MockMvcBuilders
+import tech.dobler.stoneage.domain.Work
+import tech.dobler.stoneage.domain.WorkID
+import tech.dobler.stoneage.service.DurationCalculationService
+import tech.dobler.stoneage.service.WorkService
 import java.time.Duration
 import java.time.LocalDateTime
 import org.mockito.Mockito.`when` as mockitoWhen

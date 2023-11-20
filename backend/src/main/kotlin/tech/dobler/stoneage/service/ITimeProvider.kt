@@ -1,4 +1,4 @@
-package tech.dobler.stoneage
+package tech.dobler.stoneage.service
 
 import java.time.LocalDateTime
 

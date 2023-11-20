@@ -1,10 +1,14 @@
-package tech.dobler.stoneage
+package tech.dobler.stoneage.controller
 
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
+import tech.dobler.stoneage.Log
+import tech.dobler.stoneage.domain.Work
+import tech.dobler.stoneage.service.DurationCalculationService
+import tech.dobler.stoneage.service.WorkService
 import java.time.Duration
 
 @RestController

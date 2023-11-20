@@ -1,4 +1,4 @@
-package tech.dobler.stoneage
+package tech.dobler.stoneage.domain
 
 import java.io.Serializable
 import java.time.LocalDateTime

@@ -1,4 +1,4 @@
-package tech.dobler.stoneage
+package tech.dobler.stoneage.service
 
 import org.springframework.stereotype.Service
 import java.time.Duration
