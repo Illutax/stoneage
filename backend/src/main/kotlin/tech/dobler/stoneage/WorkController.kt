@@ -3,18 +3,23 @@ package tech.dobler.stoneage
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 import java.time.Duration
 
 @RestController
-class WorkController(private val service: WorkService, private val durationCalculationService: DurationCalculationService) {
-    companion object: Log()
-    @GetMapping
-    fun index(): ResponseEntity<Duration> = get()
-    @GetMapping("/", produces = ["application/json"])
-    fun get(): ResponseEntity<Duration> {
+@RequestMapping("/work")
+class WorkController(
+    private val service: WorkService,
+    private val durationCalculationService: DurationCalculationService
+) {
+    companion object : Log()
+
+    @GetMapping("", produces = ["application/json"])
+    fun getDuration(): ResponseEntity<Duration> {
+        log.info("Serving duration")
         val work = service.find()
-        val duration = work?.finishing?.let{ durationCalculationService.duration(it) }
+        val duration = work?.finishing?.let { durationCalculationService.duration(it) }
         return ResponseEntity.ok(duration)
     }
 
