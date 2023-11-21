@@ -5,7 +5,7 @@ import java.time.LocalDateTime
 import java.util.*
 import javax.persistence.*
 
-@Entity(name= "work")
+@Entity
 @Table(name = "work")
 data class Work(@Id val id: WorkID, val finishing: LocalDateTime, var completed: Boolean = false) {
     fun complete(): Work {
