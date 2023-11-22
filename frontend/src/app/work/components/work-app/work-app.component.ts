@@ -10,7 +10,7 @@ import { Work } from '../../model/Work';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class WorkAppComponent implements OnInit {
-  private readonly UPDATE_INTERVAL_IN_MS = 250;
+  private readonly UPDATE_INTERVAL_IN_MS = 1000;
 
   private currentWork: Work | null = null;
   private t: Subscription | null = null;
@@ -36,7 +36,18 @@ export class WorkAppComponent implements OnInit {
       this.setNewWork(null);
       return this.getDuration();
     }
-    return `${ms / 1000} s`;
+    return `${this.format(ms)} s`;
+  }
+
+  private format(ms: number) {
+    const seconds = Math.ceil(ms / 1000);
+    let result: string = seconds.toString();
+    if (seconds > 59) {
+      const minutes = Math.floor(seconds / 60);
+      const remainingSeconds = seconds - minutes * 60;
+      result = `${minutes} min ${remainingSeconds}`;
+    }
+    return result;
   }
 
   private getWork() {
