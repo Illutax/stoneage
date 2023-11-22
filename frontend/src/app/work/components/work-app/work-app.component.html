@@ -1,1 +1,7 @@
-<p>work-app works!</p>
+<h2>Work</h2>
+
+<div *ngIf="!hasWork()">Go start working!</div>
+<div *ngIf="hasWork()">Finishing in {{getDuration()}}</div>
+
+<button (click)="startWork()" [disabled]="hasWork()">Work</button>
+

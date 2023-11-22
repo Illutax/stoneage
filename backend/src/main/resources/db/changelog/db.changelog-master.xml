@@ -6,13 +6,13 @@
     <changeSet id="1" author="vd">
         <createTable tableName="work">
             <column name="id" type="varchar(36)">
-                <constraints primaryKey="true" primaryKeyName="work_id_pk"/>
+                <constraints primaryKey="true" primaryKeyName="work_id_pk" />
             </column>
             <column name="finishing" type="timestamp">
-                <constraints nullable="false"/>
+                <constraints nullable="false" />
             </column>
             <column name="completed" type="boolean" defaultValueBoolean="false">
-                <constraints nullable="false"/>
+                <constraints nullable="false" />
             </column>
         </createTable>
 
