@@ -15,6 +15,22 @@
                 <constraints nullable="false" />
             </column>
         </createTable>
+    </changeSet>
 
+    <changeSet id="2" author="vd">
+        <createTable tableName="users">
+            <column name="id" type="varchar(36)">
+                <constraints primaryKey="true" primaryKeyName="user_id_pk" />
+            </column>
+            <column name="email" type="varchar(320)">
+                <constraints nullable="false" />
+            </column>
+            <column name="password" type="varchar(68)">
+                <constraints nullable="false" />
+            </column>
+            <column name="is_admin" type="boolean" defaultValueBoolean="false">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
     </changeSet>
 </databaseChangeLog>
