@@ -6,6 +6,20 @@ import org.junit.jupiter.api.Test
 import java.time.LocalDateTime
 
 class WorkTest {
+
+    @Test
+    fun `work is reflexive`() {
+        val work1 = Work(WorkID("abc"), LocalDateTime.parse("2023-11-17T13:18"))
+        val work2 = Work(WorkID("abc"), LocalDateTime.parse("2023-11-17T13:19"))
+
+        assertThat(work1).isEqualTo(work1)
+        assertThat(work1).isEqualTo(work2)
+        assertThat(work2).isEqualTo(work1)
+
+        assertThat(work2).hasSameHashCodeAs(work1)
+        assertThat(work1).hasSameHashCodeAs(work2)
+    }
+
     @Test
     fun `ctor finished default=false`() {
         val work = Work(WorkID("abc"), LocalDateTime.parse("2023-11-17T13:18"))

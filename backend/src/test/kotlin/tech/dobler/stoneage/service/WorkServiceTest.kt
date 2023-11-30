@@ -48,7 +48,7 @@ class WorkServiceTest {
         val now = LocalDateTime.parse("2023-10-29T02:38:15.00")
         `when`(timeProvider.instant).thenReturn(now)
         `when`(workRepository.findByCompletedIsFalseOrderByFinishing())
-            .thenReturn(listOf(Work(WorkID("1"), now.minusSeconds(15))))
+            .thenReturn(listOf(Work(WorkID("1"), now.minusSeconds(63))))
 
         // Act
         val result = systemUnderTest.find()
