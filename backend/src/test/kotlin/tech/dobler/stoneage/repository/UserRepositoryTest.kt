@@ -35,4 +35,17 @@ class UserRepositoryTest(
 
         assertThat(result).containsExactly(user)
     }
+
+    @Test
+    @Transactional
+    fun `find by email`() {
+        val email = EMail("a@b.c")
+        val user = User(UserID.new(), email, "foobar123")
+        systemUnderTest.save(user)
+        entityManager.flushAndClear()
+
+        val result = systemUnderTest.findByEmail(email)
+
+        assertThat(result).contains(user)
+    }
 }

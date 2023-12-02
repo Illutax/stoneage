@@ -1,0 +1,7 @@
+### With out
+GET http://localhost:8080/work
+Authorization: Basic {{email}} {{password}}
+
+### w/o auth
+GET http://localhost:8080/work
+

@@ -1,0 +1,8 @@
+[
+  {
+    "id": "123",
+    "email": "admin@stoneage.com",
+    "password": "encrypted-password-foobar",
+    "admin": true
+  }
+]

@@ -1,0 +1,8 @@
+[
+  {
+    "id": "093f4a8c-66d5-4b5b-9718-a94cd7186019",
+    "email": "admin@stoneage.com",
+    "password": "{bcrypt}$2y$10$eI/iBWV7a070ztbBCWRLxODbDNW44fNokEMuBAuLAP3opyBtp6y.W",
+    "admin": false
+  }
+]
